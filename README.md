@@ -7,6 +7,14 @@ The URLSniper URL Shortener project aims to develop a user-friendly and efficien
 
 2. Password: demo
 
+<!-- App Preview -->
+<br />
+<div align="center">
+  <a href="https://urlsniper.herokuapp.com/">
+    <img src="/static/images/preview.png" alt="urlsniper preview" width="90%" height="30%">
+  </a>
+</div>
+
 ## Key Features:
 
 1. URL Shortening: Users can input lengthy URLs and generate shortened versions that are easier to share and remember.
