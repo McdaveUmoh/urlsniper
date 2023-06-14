@@ -2,6 +2,10 @@
 
 The URLSniper URL Shortener project aims to develop a user-friendly and efficient URL shortening service. The application will allow users to convert long, complex URLs into shorter, more manageable ones. The project will utilize cutting-edge technologies to ensure fast and reliable redirection, while also providing additional features such as link analytics and QR code generation.
 
+#DEMO ACCOUNT:
+Username: demo
+password: demo
+
 ## Key Features:
 
 1. URL Shortening: Users can input lengthy URLs and generate shortened versions that are easier to share and remember.
