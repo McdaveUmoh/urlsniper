@@ -7,3 +7,4 @@ env
 .pytest_cache/
 .vscode
 .vscode/
+app/__pycache__

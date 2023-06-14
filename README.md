@@ -22,4 +22,4 @@ The URLSniper URL Shortener project aims to develop a user-friendly and efficien
 
 The brand name "URLSniper" reflects the core essence of the project. The color red signifies energy, speed, and action, aligning with the fast and efficient nature of URL shortening. "Route" suggests navigation and directing users to their desired destinations, emphasizing the primary purpose of the application. URLSniper creates a memorable and impactful brand name that resonates with the project's goals.
 <br/>
-The URLSniper URL Shortener project aims to revolutionize URL management, offering users a reliable and feature-rich platform to create shorter, customized URLs. With its advanced features and user-centric design, URLSnipper will provide an exceptional URL shortening experience.
+The URLSniper URL Shortener project aims to revolutionize URL management, offering users a reliable and feature-rich platform to create shorter, customized URLs. With its advanced features and user-centric design, URLSniper will provide an exceptional URL shortening experience.
