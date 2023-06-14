@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endfor %}
+    <h1 class="text-center">{% block title %} Your Snips History {% endblock %}</h1>
+    <table class="table table-dark table-hover ">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Short</th>
+            <th scope="col">Original Url</th>
+            <th scope="col">Custom Url</th>
+            <th scope="col">Clicks</th>
+            <th scope="col">Creation Date</th>
+            <th scope="col">Action</th>
+            <th scope="col">Bar Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for url in urls %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td><a class="nav-link" href="{{ url['short_url'] }}">{{ url['short_url'] }}</a></td>
+                    <td><a class="nav-link" href="{{ url['original_url'] }}">{{ url['original_url'] }}</a></td>
+                    <td>{{ url['custom_url'] }}</td>
+                    <td>{{ url['clicks'] }}</td>
+                    <td>{{ url['created'] }}</td>
+                    <td>
+                        <form action="{{ url_for('delete_url', url_id=url.id) }}" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                    <td><img src="../static/{{url['barcode_filename']}}" width="50px" height="50px" alt="Barcode"></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

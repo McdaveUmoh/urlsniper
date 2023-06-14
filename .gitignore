@@ -1,0 +1,9 @@
+__pycache__
+*.db
+envs
+env/
+env
+.pytest_cache
+.pytest_cache/
+.vscode
+.vscode/

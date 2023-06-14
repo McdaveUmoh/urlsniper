@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card" style="width: 35rem; padding: 20px; box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12); ">
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+        <h1>{% block title %} Snip it Here {% endblock %}</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="url">URL</label>
+                <input type="text" name="url"
+                    placeholder="https://example.com/your-url" class="form-control"
+                    value="{{ request.form['url'] }}" autofocus></input>
+            </div>
+            <div class="form-group">
+                <label for="custom">Customize URL(Optional)</label>
+                <input type="text" name="custom"
+                    placeholder="Enter a custom URL (optional)" class="form-control"
+                    value="{{ request.form['custom'] }}" autofocus></input>
+            </div>
+            
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    {% if short_url %}
+        <div class="card" style="width: 20rem; height:auto; padding: 5px; box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12); ">
+            <img src="{{ url_for('static', filename=qr_code_filename) }}" width="100%" alt="QR Code">
+            <a class=" card-text nav-link" href="{{ short_url}}"> Your snipped link is : {{ short_url }}</a>
+        </div>
+    {% endif %}
+
+    
+
+{% endblock %}
