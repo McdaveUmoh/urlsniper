@@ -23,8 +23,8 @@
             {% for url in urls %}
                 <tr>
                     <th scope="row">{{ loop.index }}</th>
-                    <td><a class="nav-link" href="{{ url['short_url'] }}">{{ url['short_url'] }}</a></td>
-                    <td><a class="nav-link" href="{{ url['original_url'] }}">{{ url['original_url'] }}</a></td>
+                    <td><a  target="_blank" class="nav-link" href="{{ url['short_url'] }}">{{ url['short_url'] }}</a></td>
+                    <td><a target="_blank" class="nav-link" href="{{ url['original_url'] }}">{{ url['original_url'] }}</a></td>
                     <td>{{ url['custom_url'] }}</td>
                     <td>{{ url['clicks'] }}</td>
                     <td>{{ url['created'] }}</td>
