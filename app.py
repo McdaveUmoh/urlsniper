@@ -115,6 +115,9 @@ def signup():
         email = request.form['email']
         password = request.form['password']
         
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        
         # Check if the username or email already exists in the database
         existing_user = cursor.execute('SELECT id FROM User WHERE username = ? OR email = ?', (username, email)).fetchone()
 
@@ -125,8 +128,7 @@ def signup():
 
         hashed_password = pbkdf2_sha256.hash(password)
 
-        conn = get_db_connection()
-        cursor = conn.cursor()
+        
 
         cursor.execute('INSERT INTO User (username, email, password) VALUES (?, ?, ?)', (username, email, hashed_password))
 
