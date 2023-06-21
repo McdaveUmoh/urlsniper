@@ -130,7 +130,7 @@ def signup():
     return render_template('signup.html')
 
 @app.route('/dashboard', methods=['GET', 'POST'])
-@login_required
+
 def dashboard():
     user_id = current_user.id
     username = current_user.username
