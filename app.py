@@ -114,6 +114,14 @@ def signup():
         username = request.form['username']
         email = request.form['email']
         password = request.form['password']
+        
+        # Check if the username or email already exists in the database
+        existing_user = cursor.execute('SELECT id FROM User WHERE username = ? OR email = ?', (username, email)).fetchone()
+
+        if existing_user:
+            flash('Username or email is already in use.')
+            conn.close()
+            return redirect(url_for('signup'))
 
         hashed_password = pbkdf2_sha256.hash(password)
 
@@ -127,7 +135,7 @@ def signup():
 
         return redirect('/')
 
-    return render_template('signup.html')
+    return render_template('signup.html', error='username/Email exists already ')
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 
